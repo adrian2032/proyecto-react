@@ -3,18 +3,41 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
+import MyButton from "./assets/components/Button";
+import Item from './assets/components/Item';
+import ViewCount from './assets/components/ViewCount/ViewCount';
+import Navbar from './assets/components/Navbar';
+
+function handleNoClick(){
+  alert("te pedi que no me toques")
+
+}
+
 function App() {
+
+  const userName = "cecilia";
   const [count, setCount] = useState(0)
+
 
   return (
     <>
+    
       <div>
+        <Navbar color="black"> SONIC</Navbar>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
+        <div >
+          <h1>Hola {userName}</h1>
+          <ViewCount/>
+          <div>
+            <MyButton color="red" label="clickeame por favor" onClick={handleNoClick} > clickeame por favor</MyButton>
+          </div>
+        </div>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
@@ -28,6 +51,13 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div>
+        <MyButton/>
+      </div>
+      <div>
+        <Item></Item>
+      </div>
+      
     </>
   )
 }
