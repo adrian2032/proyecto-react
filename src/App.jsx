@@ -7,7 +7,7 @@ import './App.css'
 import MyButton from "./assets/components/Button";
 import Item from './assets/components/Item';
 import ViewCount from './assets/components/ViewCount/ViewCount';
-import MyNavbar from "./assets/components/Navbar";
+import MyNavBar from "./assets/components/NavBar/Navbar";
 
 function handleClick(){
   alert("dirigiendo a sitio web")
@@ -24,12 +24,15 @@ function App() {
     <>
 
       <div>
-        <div className="header">
-          <MyNavbar color= "orange"></MyNavbar>
-          <ViewCount initialValue= {0}></ViewCount>
+      <MyNavBar>
+      </MyNavBar>
+      <ViewCount ></ViewCount>
+
         </div>
 
-        <h1>SONIC COMPUTACION</h1>
+      
+
+
 
         <div>
             <MyButton color="red" label="Computadoras" onclick={handleClick} > Computadoras </MyButton>
@@ -67,25 +70,16 @@ function App() {
       <div>
         <Item></Item>
       </div>
-
-  */}</div>
-
-      <h1>Vite + React</h1>
-      
-      
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-  
-
- 
-      
+  <div>
+          <Item title="pantalon"
+          price="456"
+          img="htpps://via.placeholder.com/300x200"
+          category="ofertas"
+          color="green"/>
+          
+        </div>
+*/
+  }
     </>
-  )
-}
-
+  )}
 export default App

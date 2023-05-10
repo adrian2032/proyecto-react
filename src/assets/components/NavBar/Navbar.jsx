@@ -1,10 +1,12 @@
-function MyNavbar (props){
-    const styleNav ={
-            backgroundColor: props.color,
-        }
+import "./navbar.css"
+
+const MyNavBar = () => {
     return(
-    <nav backgroundColor={styleNav}>
+    <nav className="{styles.nav}">
         <ul className="nav-menu">
+            <li className="nav-item">
+                <a className="nav-link" href="#">Sonic Computacion</a>
+            </li>
             <li className="nav-item">
                 <a className="nav-link" href="#">Nuestros Productos</a>
             </li>
@@ -14,10 +16,8 @@ function MyNavbar (props){
             <li className="nav-item">
                 <a className="nav-link" href="#">Contacto y Sucursales</a>
             </li>
-
-            <div>0</div>
         </ul>
     </nav>)
 }
 
-export default MyNavbar;
+export default MyNavBar;

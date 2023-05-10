@@ -4,7 +4,7 @@ export default function ViewCount(){
     let [viewCount, setViewCount] = useState(0);
 
     const stylesViewCount = {
-        backgroundColor: "blue",
+        backgroundColor: "yellow",
         color: "black",
         fontWeight: "700",
         marginTop: "5",
