@@ -16,7 +16,7 @@ export default function ViewCount(){
     }
 
     return (<div onClick={handleClick} style={stylesViewCount}>
-                hiciste {viewCount} click
+                {viewCount} Productos
             </div>
     )
 }
