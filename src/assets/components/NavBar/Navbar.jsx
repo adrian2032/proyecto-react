@@ -1,4 +1,6 @@
 import "./navbar.css"
+import CartWidget from "../CartWidget/CartWidget.jsx"
+import ViewCount from "../ViewCount/ViewCount"
 
 const MyNavBar = () => {
     return(
@@ -16,6 +18,12 @@ const MyNavBar = () => {
             <li className="nav-item">
                 <a className="nav-link" href="#">Contacto y Sucursales</a>
             </li>
+            <ViewCount></ViewCount> 
+            <CartWidget></CartWidget>
+            
+
+            
+            
         </ul>
     </nav>)
 }

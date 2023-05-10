@@ -5,10 +5,8 @@ import './App.css'
 
 
 import MyButton from "./assets/components/Button";
-import Item from './assets/components/Item';
-import ViewCount from './assets/components/ViewCount/ViewCount';
 import MyNavBar from "./assets/components/NavBar/Navbar";
-import CartWidget from './assets/components/CartWidget/CartWidget';
+
 
 function handleClick(){
   alert("dirigiendo a sitio web")
@@ -26,7 +24,8 @@ function App() {
 
       <div>
         <div>
-          <CartWidget></CartWidget>          
+          <MyNavBar></MyNavBar>
+  
         
         </div>
       </div>
