@@ -1,12 +1,11 @@
-
-import MyButton from "./Button.jsx"
+import "./Item.css"
+import MyButton from "../Button.jsx"
 //import "./item.css"
 
 function CardDescription(props){
     return(
         <div className="item-card_detail">
             <h3> ${props.price}
-                Hola item
             </h3>
             <small>{props.category}</small>
             <MyButton label="ver mas"></MyButton>
@@ -21,7 +20,7 @@ function Item({title, img, price, category, color}){
                 <h2 className="title">{title}</h2>
             </div>
             <div className="item-card_img">
-                <img src={img} alt="imagen"></img>
+                <img src={img} alt="imagen" width={"100%"} ></img>
             </div>
             <CardDescription price={price} category={category}/>
             <MyButton color={color}> Ver detalle</MyButton>
