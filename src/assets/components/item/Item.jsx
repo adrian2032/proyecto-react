@@ -1,5 +1,6 @@
 import "./Item.css"
 import MyButton from "../Button.jsx"
+import ItemCount from "../ItemCount/ItemCount";
 //import "./item.css"
 
 function CardDescription(props){
@@ -23,6 +24,7 @@ function Item({title, img, price, category, color}){
                 <img src={img} alt="imagen" width={"100%"} ></img>
             </div>
             <CardDescription price={price} category={category}/>
+            <ItemCount></ItemCount>
             <MyButton color={color}> Ver detalle</MyButton>
         </div>
     )
