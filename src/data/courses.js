@@ -6,7 +6,7 @@ const devices = [
       description: "Reloj inteligente para monitorear tu actividad física y recibir notificaciones.",
       stock: 10,
       price: 199.99,
-      img: "/src/assets/smartWatch.jpg"
+      img: "/src/assets/images/smartWatch.jpg"
     },
     {
       id: 2,
