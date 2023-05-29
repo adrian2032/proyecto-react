@@ -1,6 +1,6 @@
 import { useEffect, useState} from "react";
 import devices from "../../../data/courses";
-import ItemList from "../item/itemList";
+import ItemList from "./itemList";
 
 
 function getData(){

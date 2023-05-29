@@ -1,7 +1,7 @@
 import { useEffect, useState} from "react";
 
 import devices from "../../../data/courses";
-import ItemList from "../item/itemList";
+import ItemList from "./itemList";
 
 
 function getData(){
@@ -25,7 +25,11 @@ function withSearch(OrigComponent){
         if (searchword === "") {
             return products
         }else{
-            return products.filter((item) => item.title === searchword)    
+            return products.filter((item) => {
+                let textTitle = item.title.toLowerCase()
+                let word = searchword.toLowerCase()
+                return textTitle.title.includes(word)
+        });    
         }
     }    
         return(

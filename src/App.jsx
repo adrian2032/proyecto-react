@@ -18,7 +18,7 @@ function App() {
       <MyNavBar></MyNavBar>
       {/*<ItemDetailContainer></ItemDetailContainer>
       <ItemListContainer></ItemListContainer>*/}
-      
+      <ItemListContainer></ItemListContainer>
     </div>
   {/*<BrowserRouter>
     <Routes>
@@ -26,9 +26,7 @@ function App() {
     </Routes>
   </BrowserRouter>  
   */}
-    
-            
-            <ItemListContainer_Search></ItemListContainer_Search>      
+          
             
  
   

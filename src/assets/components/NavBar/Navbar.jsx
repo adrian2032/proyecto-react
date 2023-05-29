@@ -1,9 +1,11 @@
 import "./navbar.css"
 import CartWidget from "../CartWidget/CartWidget.jsx"
 import ViewCount from "../ViewCount/ViewCount"
+import Flex from "../Flex/Flex"
 
 const MyNavBar = () => {
     return(
+        <Flex>
     <nav className="{styles.nav}">
         <ul className="nav-menu">
             <li className="nav-item">
@@ -25,7 +27,9 @@ const MyNavBar = () => {
             
             
         </ul>
-    </nav>)
+    </nav>
+    </Flex>
+    )
 }
 
 export default MyNavBar;
