@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import devices from "../../../data/courses"
+import { useParams } from "react-router";
 
-function getItemData(){
+import ItemCount from "../ItemCount/ItemCount";
+
+function getItemData(id){
     return new Promise((resolve) =>{
         setTimeout(() => {
-            resolve(devices[0])
+            const requestedItem = devices.find ((item) => item.id === Number(id))
+            resolve(requestedItem)
         }, 2000);
     });
 };
@@ -13,10 +17,11 @@ function getItemData(){
 function ItemDetailContainer(){
     //estado
     const [product, setProducts] = useState({})
+    const id = useParams().id;
 
     //efecto 
     useEffect(() => {
-            getItemData().then((respuesta) => {
+            getItemData(id).then((respuesta) => {
                 setProducts(respuesta)
             });
         },[])

@@ -1,4 +1,5 @@
 import { useEffect, useState} from "react";
+
 import devices from "../../../data/courses";
 import ItemList from "./itemList";
 
@@ -10,7 +11,38 @@ function getData(){
     });
 }
 
-function ItemListContainer(){
+/* HOC */
+function withSearch(OrigComponent){
+    function WrappedComponent(){
+        const [searchword, setsearchword] = useState("")
+
+    function handleChange(evt){
+        const valor = evt.target.value;
+        setsearchword(valor)
+    }
+    
+    function filterList(products){
+        if (searchword === "") {
+            return products
+        }else{
+            return products.filter((item) => {
+                let textTitle = item.title.toLowerCase()
+                let word = searchword.toLowerCase()
+                return textTitle.title.includes(word)
+        });    
+        }
+    }    
+        return(
+        <>
+        <input onChange={handleChange} placeholder="buscar productos ..."></input>
+        <OrigComponent filterList={filterList} ></OrigComponent>
+        </>
+    )}
+
+    return WrappedComponent
+}
+
+function ItemListContainerSearch({filterList}){
     let[products, setProducts] =  useState([])
 
     useEffect(() => {
@@ -19,7 +51,10 @@ function ItemListContainer(){
         })
     }, []);
 
-    return <ItemList products={products}></ItemList>    
+    return <ItemList products={filterList(products)}></ItemList>    
 }
-export default ItemListContainer
+
+const WrappedItemListContainerSearch = withSearch(ItemListContainerSearch)
+
+export default WrappedItemListContainerSearch
 

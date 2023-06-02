@@ -1,34 +1,37 @@
 import "./navbar.css"
-import CartWidget from "../CartWidget/CartWidget.jsx"
+import CartWidget from "../CartWidget/CartWidget"
 import ViewCount from "../ViewCount/ViewCount"
-import Flex from "../Flex/Flex"
+
+import { Link } from "react-router-dom"
 
 const MyNavBar = () => {
     return(
-        <Flex>
+        
     <nav className="{styles.nav}">
         <ul className="nav-menu">
             <li className="nav-item">
-                <a className="nav-link" href="#">Sonic Computacion</a>
+                <Link className="nav-link" to={"/"}>Nuestros Productos</Link> 
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Nuestros Productos</a>
+                <Link className="nav-link" to={"/product"}>Pc de Escritorio y Notebook</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Quienes somos</a>
+                <Link className="nav-link" to={"/"}>SmartPhones</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Contacto y Sucursales</a>
+                <Link className="nav-link" to={"/"}>Tablets </Link>
             </li>
-            <ViewCount></ViewCount> 
+            <li className="nav-item">
+                <Link className="nav-link" to={"/"}>Audio y otros </Link>
+            </li>
             <CartWidget></CartWidget>
+            <ViewCount></ViewCount>
             
 
             
-            
         </ul>
     </nav>
-    </Flex>
+
     )
 }
 

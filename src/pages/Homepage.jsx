@@ -1,10 +1,10 @@
-import ItemListContainer from '../assets/components/ItemListContainer/itemList'
+import ItemListContainer from '../assets/components/ItemListContainer/Search/ItemListContainer'
 import ViewCount from '../assets/components/ViewCount/ViewCount'
 
 function Homepage(){
   return (
     <div>
-        <ViewCount initial={1}/>
+        {/*<ViewCount initial={1}/> */}
         <ItemListContainer/>
     </div>
   )

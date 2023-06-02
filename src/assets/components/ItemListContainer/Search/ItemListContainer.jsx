@@ -1,7 +1,7 @@
 import { useEffect, useState} from "react";
 
-import devices from "../../../data/courses";
-import ItemList from "./itemList";
+import devices from "../../../../data/courses";
+import ItemList from "../itemList";
 
 
 function getData(){
