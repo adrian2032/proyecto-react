@@ -5,10 +5,7 @@ import { BrowserRouter, Routes, Route, useParams} from 'react-router-dom';
 
 import Homepage from './pages/Homepage';
 
-function handleClick(){
-  alert("dirigiendo a sitio web")
 
-}
 
 function App() {
   return (
@@ -17,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage/>} />
         <Route path="/product/:id" element ={<ItemDetailContainer/>} />
+        <Route path="/category/:categoryid" element ={<Homepage/>} />
         <Route path="*" element={<h4>Error 404: page not found</h4>}/>
       </Routes>
       <footer> Reclamos al 0800 o correo electronico </footer>

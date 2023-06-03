@@ -1,4 +1,4 @@
-import ItemListContainer from '../assets/components/ItemListContainer/Search/ItemListContainer'
+import ItemListContainer from '../assets/components/ItemListContainer/ItemListContainer';
 import ViewCount from '../assets/components/ViewCount/ViewCount'
 
 function Homepage(){

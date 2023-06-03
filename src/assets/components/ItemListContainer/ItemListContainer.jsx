@@ -1,60 +1,37 @@
 import { useEffect, useState} from "react";
-
 import devices from "../../../data/courses";
 import ItemList from "./itemList";
+import { useParams } from "react-router";
+
 
 
 function getData(){
     return new Promise(resolve =>{
         setTimeout(() => {
-            resolve(devices)}, 2000);
+            resolve(devices)}, 1000);
     });
 }
 
-/* HOC */
-function withSearch(OrigComponent){
-    function WrappedComponent(){
-        const [searchword, setsearchword] = useState("")
 
-    function handleChange(evt){
-        const valor = evt.target.value;
-        setsearchword(valor)
-    }
-    
-    function filterList(products){
-        if (searchword === "") {
-            return products
-        }else{
-            return products.filter((item) => {
-                let textTitle = item.title.toLowerCase()
-                let word = searchword.toLowerCase()
-                return textTitle.title.includes(word)
-        });    
-        }
-    }    
-        return(
-        <>
-        <input onChange={handleChange} placeholder="buscar productos ..."></input>
-        <OrigComponent filterList={filterList} ></OrigComponent>
-        </>
-    )}
 
-    return WrappedComponent
-}
-
-function ItemListContainerSearch({filterList}){
+function ItemListContainer({}){
     let[products, setProducts] =  useState([])
+    const {categoryid} = useParams()
+    console.log("-->",categoryid)
 
     useEffect(() => {
         getData().then((respuesta) =>{
-            setProducts(respuesta);
+            if(categoryid){
+                const filterProducts = respuesta.filter((item) => item.category === categoryid);
+                setProducts(filterProducts)
+            }else{
+                setProducts(respuesta);
+            }
         })
-    }, []);
+    }, [categoryid]);
 
-    return <ItemList products={filterList(products)}></ItemList>    
+    return <ItemList products={(products)}></ItemList>    
 }
 
-const WrappedItemListContainerSearch = withSearch(ItemListContainerSearch)
-
-export default WrappedItemListContainerSearch
+export default ItemListContainer
 

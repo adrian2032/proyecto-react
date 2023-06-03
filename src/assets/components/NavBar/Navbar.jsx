@@ -13,16 +13,16 @@ const MyNavBar = () => {
                 <Link className="nav-link" to={"/"}>Nuestros Productos</Link> 
             </li>
             <li className="nav-item">
-                <Link className="nav-link" to={"/product"}>Pc de Escritorio y Notebook</Link>
+                <Link className="nav-link" to={"/category/Computer"}>Pc de Escritorio y Notebook</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" to={"/"}>SmartPhones</Link>
             </li>
             <li className="nav-item">
-                <Link className="nav-link" to={"/"}>Tablets </Link>
+                <Link className="nav-link" to={"/category/Tablet"}>Tablets </Link>
             </li>
             <li className="nav-item">
-                <Link className="nav-link" to={"/"}>Audio y otros </Link>
+                <Link className="nav-link" to={"/category/Otros"}>Audio y otros </Link>
             </li>
             <CartWidget></CartWidget>
             <ViewCount></ViewCount>
