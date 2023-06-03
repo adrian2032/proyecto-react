@@ -20,21 +20,22 @@ function Item({title, img, price, category, color, id}){
 
     return (
         <>
-         <Link to={`/product/${id}`}>
+        
             <div className="item-card">
-                   
+                    <Link to={`/product/${id}`}>
                         <div className="item-card_header">
                             <h2 className="title">{title}</h2>
                         </div>
                         <div className="item-card_img">
                             <img src={img} alt="imagen" width={"100%"} ></img>
                         </div>
+                    </Link>
                         <CardDescription price={price} category={category}/>    
                    
                 <ItemCount></ItemCount>
                 <MyButton color={color}> Ver detalle</MyButton>
             </div>
-         </Link>
+         
         </>
         
     )
