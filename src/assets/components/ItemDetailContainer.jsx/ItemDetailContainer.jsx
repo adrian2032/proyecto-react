@@ -9,7 +9,7 @@ function getItemData(id){
         setTimeout(() => {
             const requestedItem = devices.find ((item) => item.id === Number(id))
             resolve(requestedItem)
-        }, 2000);
+        }, 1000);
     });
 };
 
@@ -32,7 +32,7 @@ function ItemDetailContainer(){
             ItemDetailContainer
             <h1>Titulo: {product.title}</h1>
             <img src={product.img}></img>
-            <h4> price: $ {product.price}</h4>
+            <h4> price: US$ {product.price}</h4>
         </div>
     )
 }

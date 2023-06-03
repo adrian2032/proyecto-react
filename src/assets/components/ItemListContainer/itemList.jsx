@@ -3,6 +3,7 @@ import Item from "../item/Item";
 import Flex from "../Flex/Flex";
 import { useState } from "react";
 
+
 {/* clase 8 */}
 function FilterList({children, items}){
     const[searchword, setSearchword] = useState("");

@@ -1,7 +1,8 @@
 import "./Item.css"
 import MyButton from "../Button.jsx"
 import ItemCount from "../ItemCount/ItemCount";
-import {Link}  from "react-router-dom";
+import { Link } from "react-router-dom";
+
 //import "./item.css"
 
 function CardDescription(props){
@@ -16,21 +17,24 @@ function CardDescription(props){
 }
 
 function Item({title, img, price, category, color, id}){
+
     return (
         <>
-            <Link to={`/product/${id}`}></Link>
-                <div className="item-card">
-                    <div className="item-card_header">
-                        <h2 className="title">{title}</h2>
-                    </div>
-                    <div className="item-card_img">
-                        <img src={img} alt="imagen" width={"100%"} ></img>
-                    </div>
-                    <CardDescription price={price} category={category}/>
-                    <ItemCount></ItemCount>
-                    <MyButton color={color}> Ver detalle</MyButton>
+            <Link to={`/product/${id}`}>
+            <div className="item-card">
+                <div className="item-card_header">
+                    <h2 className="title">{title}</h2>
+                </div>
+                <div className="item-card_img">
+                    <img src={img} alt="imagen" width={"100%"} ></img>
+                </div>
+                <CardDescription price={price} category={category}/>
+                <ItemCount></ItemCount>
+                <MyButton color={color}> Ver detalle</MyButton>
             </div>
+            </Link>
         </>
+        
     )
 }
 
