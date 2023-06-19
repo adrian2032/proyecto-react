@@ -1,27 +1,37 @@
+import MyButton from "../Button/Button";
 import Flex from "../Flex/Flex";
 import { useState } from "react";
+import "./ItemCount.css"
 
 
-function ItemCount(){
-    const [ count, setCount] = useState(1);
+function ItemCount(props){
+    const [ count, setCount] = useState(0);
 
     function handleAdd(){
-        setCount(count + 1);
+        if( count < props.stock) setCount(count + 1);
     }
     function handleExtract(){
         if (count > 1) setCount(count - 1);
     }
 
 
-    return <div className="count-container">
-        <div className="count-btns">
+    return (
+    <div className="itemcount_container">
+        <small> Agregar la cantidad deseada al carrito</small>
+        <div className="itemcount_control">
             <Flex>
-                <button onClick={handleExtract}> - </button>
-                <p> {count} </p>
-                <button onClick={handleAdd}> + </button>
+                <MyButton className="btn btn-danger" onClick={handleExtract}> - </MyButton>
+                <span className="itemcount_count">{count}</span>
+                <MyButton className="btn btn-success" onClick={handleAdd}> + </MyButton>
             </Flex>
         </div>
-        <button> Agregar a mi carrito</button>
-    </div>
-}
+        <div className="itemcount_btns">
+            <MyButton
+            onClick={() => {props.onAddToCart(count)}}
+            >
+            Agregar a mi carrito
+            </MyButton>
+        </div>
+    </div>)
+    }
 export default ItemCount
